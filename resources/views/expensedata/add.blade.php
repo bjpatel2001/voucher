@@ -92,9 +92,23 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-sm-4 control-label">GST amount<span class="error">*</span></label>
+                                    <label class="col-sm-4 control-label">IGST<span class="error">*</span></label>
                                     <div class="col-sm-6 col-md-4">
-                                        <input type="number" name="gst" id="gst" placeholder="GST amount" class="form-control input-sm required" value="{{old('gst')}}" />
+                                        <input type="number" name="gst" id="gst" placeholder="IGST" class="form-control input-sm required" value="{{old('gst')}}" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">CGST<span class="error">*</span></label>
+                                    <div class="col-sm-6 col-md-4">
+                                        <input type="number" name="cgst" id="cgst" placeholder="CGST" class="form-control input-sm required" value="{{old('cgst')}}" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">SGST<span class="error">*</span></label>
+                                    <div class="col-sm-6 col-md-4">
+                                        <input type="number" name="sgst" id="sgst" placeholder="SGST" class="form-control input-sm required" value="{{old('sgst')}}" />
                                     </div>
                                 </div>
 

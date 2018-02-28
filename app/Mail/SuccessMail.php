@@ -32,7 +32,7 @@ class SuccessMail extends Mailable
     {
 
         $address = 'info@compassoverseas.com';
-        $name = 'PTEPromoCode.com';
+        $name = 'PTEVoucherCode.com';
         if($this->successData['type'] == 'admin') {
             $to = 'info@compassoverseas.com';
             $view = 'emails.success_admin';
@@ -52,7 +52,7 @@ class SuccessMail extends Mailable
         }elseif ($this->successData['type'] == 'agent_mail') {
             $to = $this->successData['email'];
             $view = 'emails.agent';
-            $subject = 'PTE Promo Code Special Discount Link';
+            $subject = 'PTE Voucher Code Special Discount Link';
         }
 
         return $this->view($view)

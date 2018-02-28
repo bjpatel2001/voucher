@@ -1,4 +1,4 @@
-<h1>From PTE Promo Code</h1><br>Customer Name     {{$enquiryData->name}}<br/>
+<h1>From PTE Voucher Code</h1><br>Customer Name     {{$enquiryData->name}}<br/>
 Customer Mobile  {{$enquiryData->mobile}}<br/>
 Customer Email   {{$enquiryData->email}}<br/>
 

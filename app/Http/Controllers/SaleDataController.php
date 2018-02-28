@@ -249,10 +249,10 @@ class SaleDataController extends Controller
             $row['Voucher'] = $requestData->voucher_code;
             $row['Number Of Voucher'] = $requestData->number_of_voucher;
             $row['Transaction Id'] = $requestData->payment_code;
-            $row['Before GST'] = $amount_paid - ($requestData->amount_paid * 0.18);
-            $row['SGST'] = (isset($requestData->Enquiry) && $requestData->Enquiry->state == 5) ? 'SGST:'.$amount_paid * 0.09 : '-' ;
-            $row['CGST'] = (isset($requestData->Enquiry) && $requestData->Enquiry->state == 5) ? 'CGST:'.$amount_paid * 0.09 : '-' ;
-            $row['IGST'] = (isset($requestData->Enquiry) && $requestData->Enquiry->state == 5) ? '-' :  'IGST:' .$amount_paid * 0.18;
+            $row['Before GST'] =  ($amount_paid*100)/118;
+            $row['SGST'] = (isset($requestData->Enquiry) && $requestData->Enquiry->state == 5) ? 'SGST:'.($amount_paid*100)/59 : '-' ;
+            $row['CGST'] = (isset($requestData->Enquiry) && $requestData->Enquiry->state == 5) ? 'CGST:'.($amount_paid*100)/59 : '-' ;
+            $row['IGST'] = (isset($requestData->Enquiry) && $requestData->Enquiry->state == 5) ? '-' :  'IGST:' .($amount_paid*100)/118;
             $row['After GST'] = $requestData->amount_paid;
             $row['State'] =  $requestData->state ;
             $appData[] = $row;

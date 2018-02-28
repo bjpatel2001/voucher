@@ -2,323 +2,428 @@
 
 @section('content')
 
-    <div class=banner id=banner>
-        <div class=glass>
-            <div class="text-center ban-bot">
-
-                <div class=callbacks_container id=top>
-                    <div class=row>
-                        @if (count($errors) > 0)
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-                        <div class="col-md-5" hidden-xs hidden-sm>
-                            <ul class=rslides id=slider3>
-                                <li>
-                                    <div class=ban-info><h3>Buy PTE Voucher Online</h3></div>
-                                <li>
-                                    <div class=ban-info><h3>Get 5 Free PTE Mock Tests</h3></div>
-                                <li>
-                                    <div class=ban-info><h3>24 X 7 Support</h3></div>
-                            </ul>
-                        </div>
-                        <div class="col-md-5" style="margin-top: 0" ; frm_container>
-                            <div class="hidden-xs hidden-sm" style="min-height: 5em;"></div>
-                            <form action="{{url('pte/payment-request')}}" name="app_add_form" id="app_form"
-                                  style="border-radius: 0px;" method="post"
-                                  class="form-horizontal group-border-dashed pte-frm">
-                                <h3 style="color:#fff;font-weight:bold;">Limited Time Offer</h3>
-                                <h1 style="color:#fff;">Buy PTE Voucher Code for &#8377;{{$rate or ''}} Only</h1>
-                                <br>
-                                <div class="row">
-                                    <div class="col-xs-6">
-                                        <select class="form-control" name="state" id="state" required>
-                                            <option value="">State</option>
-                                            @if(count($state) > 0)
-                                                @foreach($state as $row)
-                                                    <option value="{{$row->id}}">{{$row->name}}</option>
-                                                @endforeach
-                                            @endif
-                                        </select>
-
-                                        <input type="text" name="name" id="name" placeholder="Name"
-                                               class="form-control" value="{{$name or ''}}" required/>
-
-                                        <input type="email" name="email" id="email" placeholder="Email"
-                                               class="form-control" value="{{$email or ''}}" required/>
-
-                                    </div>
-                                    <div class="col-xs-6">
-                                        <input type="text" name="mobile" id="mobile" placeholder="Mobile" maxlength="10" minlength="10"
-                                               class="form-control" value="{{$mobile or ''}}" required/>
-                                        <select class="form-control" name="number_of_voucher" id="number_of_voucher"
-                                                value="{{old('number_of_voucher')}} required>
-                                                <option value=">QTY.No of Discounted PTE Voucher</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                        </select>
-                                        <br>
-                                        <h4 style="color:#fff;font-weight:bold;">Rate : &#8377;{{$rate or ''}}/ Promo Code</h4>
-
-                                        <h5 style="color:#fff;text-align:left;">Code Will Be Sent Out On Your Email
-                                            Immediately.</h5>
-                                    </div>
-                                    <input type="hidden" name="user_id" value="{{$user_id or ''}}">
-
-                                </div>
-                                {{ csrf_field() }}
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <button type="submit" name="save" class="btn btn-success"
-                                                style="border: 1px solid #FFF; background-color: #8dbd35;">Buy PTE Promo
-                                            Code
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class=clearfix></div>
-            </div>
+    <!-- banner-->
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
         </div>
-    </div>
-    <div class=save-main>
-        <div class=container><h2 style=color:#fff;font-weight:700>{{$title or ''}}</h2></div>
-    </div>
-    <div class="even services-wthree" id=how_to_book>
-        <div class=container><h3>How to Book PTE Test Date ?</h3>
-            <div class=content-grids>
+    @endif
+    <div class="banner-agile" style="padding:0;">
+        <div style="background: rgba(0,0,0,0.6);padding-top:30px;min-height: 632px;">
+            <div class="moto">
+                <h1 style="text-align:center;font-weight:bold;color:#fff;">Buy PTE Voucher Online for
+                    ₹ {{$rate or ''}} </h1>
+            </div>
 
 
-                <center>
-                    <div class="" data-wow-delay=0.1s data-wow-duration=1.5s>
-                        <div class=btm-clr4><span>1</span>
-                            <center><img alt="Buy PTE Voucher Code" src=https://ptepromocode.com/images/h1.png
-                                         style=width:100px;height:100px;margin-top:42px></center>
-                            <p>Buy a PROMO Code from <a href=https://www.ptepromocode.com>ptepromocode.com.</a></div>
-                        <div class=btm-clr4><span>2</span>
-                            <center><img alt="Book PTE Test" src=https://ptepromocode.com/images/h2.png
-                                         style=width:100px;height:100px;margin-top:42px></center>
-                            <p>Create your ACCOUNT on <a href=http://pearsonpte.com/book>pearsonpte.com/book</a></div>
-                        <div class=btm-clr4><span>3</span>
-                            <center><img alt="Login in Pearsonpte for PTE exam booking"
-                                         src=https://ptepromocode.com/images/h3.png
-                                         style=width:100px;height:100px;margin-top:42px></center>
-                            <p>Login to <a href=http://pearsonpte.com>pearsonpte.com</a> using your Username and
-                                Password
-                        </div>
-                        <div class=btm-clr4><span>4</span>
-                            <center><img alt="Enter details for PTE Test" src=https://ptepromocode.com/images/h4.png
-                                         style=width:100px;height:100px;margin-top:42px></center>
-                            <p>Enter your preferred date, location and other details</div>
-                        <div class=btm-clr4><span>5</span>
-                            <center><img alt="Enter PTE Promo or Voucher Code"
-                                         src=https://ptepromocode.com/images/h5.png
-                                         style=width:100px;height:100px;margin-top:42px></center>
-                            <p>Enter Promo Code on the payment page.</div>
-                        <div class=btm-clr4><span>6</span>
-                            <center><img alt="email from PearsonPTE" src=https://ptepromocode.com/images/h6.png
-                                         style=width:100px;height:100px;margin-top:42px></center>
-                            <p>Receive CONFIRMATION email from PTE about your test booking.</div>
-                    </div>
-                </center>
+            <div class="txt-blink hidden-xs hidden-sm" style="float: left;min-width:560px;">
+
+                <h2 class="blink">Get 5 Free Mock Test</h2>
+                <h3 class="blink">Free Reference Material</h3>
+                <h3 class="blink">24 x 7 Support</h3>
 
 
             </div>
+            <div class="txt-blink visible-xs visible-sm" style="width:100%;">
+
+                <h2 class="blink" style="margin-left:0;">Get 5 Free Mock Test</h2>
+                <h3 class="blink" style="margin-left:0;">Free Reference Material</h3>
+                <h3 class="blink" style="margin-left:0;">24 x 7 Support</h3>
+            </div>
+
+            <div class="banner-text-agileinfo">
+                <form class="pay-form" method="post" action="{{url('pte/payment-request')}}">
+                    <div class="frm-grp">
+                        <select class="form-control2" name="state" id="state" style="margin-bottom: 1em;color:#fff;" required>
+                            <option value="">State</option>
+                            @if(count($state) > 0)
+                                @foreach($state as $row)
+                                    <option value="{{$row->id}}">{{$row->name}}</option>
+                                @endforeach
+                            @endif
+                        </select>
+                    </div>
+                    <div class="frm-grp">
+                        <input type="text" name="name" id="name" placeholder="Name"
+                               class="form-control2" value="{{$name or ''}}" style="margin-bottom: 1em;color:#fff;" required/>
+                    </div>
+                    <div class="frm-grp">
+                        <input type="text" name="mobile" id="mobile" placeholder="Mobile" maxlength="10" minlength="10"
+                               class="form-control2" value="{{$mobile or ''}}" style="margin-bottom: 1em;color:#fff;" required/>
+                   </div>
+                    <div class="frm-grp">
+                        <input type="email" name="email" id="email" placeholder="Email"
+                               class="form-control2" value="{{$email or ''}}" style="margin-bottom: 1em;color:#fff;" required/>
+
+                    </div>
+                    <div class="frm-grp">
+                        <select class="form-control2" name="number_of_voucher" id="number_of_voucher"
+                                value="{{old('number_of_voucher')}}" style="margin-bottom: 1em;color:#fff;" required>
+                                                <option value= "">QTY.No of Discounted PTE Voucher</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+
+                    </div>
+                    <div class="frm-grp"><input type="submit" name="save" value="Buy Now" class="btn"
+                                                style="text-align:center;background-color:#0080aa;margin-bottom: 1em;color:#fff;front-size:1.2em;width:94%">
+                    </div>
+                    <div class="">
+                        <h5 style="color:#fff;"><b>Note:</b> Code will be sent to your email immediately.</h5>
+                    </div>
+                </form>
+
+
+            </div>
+
+
         </div>
     </div>
-    <div class=services-wthree style=padding-bottom:0><h3>PTE FAQs</h3>
-        <div class=container>
-            <div class=row>
-                <div class=col-md-6>
-                    <div id=accordion2><h3 style=color:#fff style=color:#fff>What is PTE-Academic?</h3>
-                        <div><p style=text-align:justify>Pearson Test of English Academic Test is a computer based
-                                language
-                                test of reading, writing, listening and speaking English. The test provides the students
-                                with a chance to prove their command over the English language on passing which they
-                                would
-                                be able to acquire immigration and student visas for themselves.</div>
-                        <h3 style=color:#fff style=color:#fff>How PTE Academic exam is different from PTE General?</h3>
-                        <div><p style=text-align:justify>Only PTE-A is valid for all visa applications. It must be
-                                remembered that PTE-General will not be accepted in case of visa applications.</div>
-                        <h3 style=color:#fff>What is the PTE discounted Promo Code?</h3>
-                        <div><p style=text-align:justify>It is a payment method in which you will be provided with a PTE
-                                discounted voucher or promo code and while booking your PTE test through your official
-                                PTE
-                                web account you can type in the promo code to access the discount. These codes can be
-                                purchased from the professional partners of PTE-Academic. We are one of them.</div>
-                        <h3 style=color:#fff>What does <a href=http://www.ptepromocode.com>www.ptepromocode.com</a> do?
-                        </h3>
-                        <div><p style=text-align:justify>Our website helps the student in booking for PTE Academic Exam
-                                at
-                                cheap prices, helping them in realizing their dreams of studying abroad. We can also
-                                provide
-                                the academic and Visa consultation if needed.</div>
-                        <h3 style=color:#fff>How do I buy the promo code from PTE Promo Code?</h3>
-                        <div><p style=text-align:justify>You need to enter your personal information and select the
-                                number
-                                of promo codes you want to buy on our website. Then you are needed to enter your credit
-                                card
-                                information to get the promo code sent to you through e-mail. Our website has a very
-                                secure
-                                payment gateway and your personal information will be kept safe.</div>
-                        <h3 style=color:#fff>How to apply the promo code on to Pearson page?</h3>
-                        <div>
-                            <ul>
-                                <li>You first need to go to the website <a style='color: #27579a;'
-                                                                           href=http://www.pearsonpte.com>www.pearsonpte.com</a>
-                                    and click on <b>BOOK NOW</b>. Then you need to click on <b>SIGN IN NOW</b>.
-                                <li>On the left hand side a column with the option of <b>SCHEDULE NOW</b> will be
-                                    visible.
-                                <li>Next, you need to choose the nearest 5 centres and click on the <b>SEARCH ICON</b>.
-                                <li>Your centre will be displayed here. Then you are required to select month, date and
-                                    time-slot
-                                <li>Then you need to click on <b>SELECT APPOINTMENT</b>.
-                                <li>Then after pressing <b>NEXT</b> you will be able to view the PLT Registration
-                                    questions.
-                                    Then you need to <b>SCROLL DOWN</b> to view the ‘Add PTE voucher code or promo code’
-                                    tab.
-                                <li>After typing in the promo code you are required to click on <b>APPLY</b>.
-                                <li>Once the code has been applied, the <b>TOTAL DUE</b> amount will be displayed as
-                                    0.00.
-                                <li>Review your order and click on <b>CHECK BOX</b> to ensure that you have gone through
-                                    and
-                                    agreed to all the terms and conditions.
-                                <li>Next, click on confirm order.
-                                <li>After confirmation you will receive a confirmation mail from Pearson.
-                            </ul>
-                        </div>
-                        <h3 style=color:#fff>What is the validity of the promo code to be redeemed on the PTE
-                            website?</h3>
-                        <div><p style=text-align:justify>The promo code will be effective till 11 months from the date
-                                of
-                                purchase all over India.</div>
-                        <h3 style=color:#fff>Can I book PTE Academic for PR (Migration) and Student Visa?</h3>
-                        <div>
-                            <ul>
-                                <li>In case of Education, all countries accept PTE
-                                <li>In case of Migration, presently Australia and NZ are accepting PTE.
-                            </ul>
-                            <p style=text-align:justify>For further detailed information, please visit <a
-                                        href=http://pearsonpte.com/test-takers/accepts>http://pearsonpte.com/test-takers/accepts</a>
-                        </div>
-                        <h3 style=color:#fff>What is the charge of rescheduling PTE-A?</h3>
-                        <div><p style=text-align:justify>Rescheduling takes 25% of the current exam fee in India and
-                                your
-                                exam can be rescheduled 7 days before the original test date.</div>
-                        <h3 style=color:#fff>Which is the best website to buy PTE Promo Code?</h3>
-                        <div><p style=text-align:justify>That’s us: <a href=http://ptepromocode.com>ptepromocode.com</a>
-                                You
-                                can buy the promo code by logging on to this website at point of time.</div>
-                    </div>
-                </div>
-                <div class=col-md-6>
-                    <div id=accordion><h3 style=color:#fff>What is the customer care number for PTE in India?</h3>
-                        <div><p style=text-align:justify>The TOLL-FREE number in India is 0008004402020. You can call
-                                them
-                                on weekdays between 9 A.M to 5 P.M.</div>
-                        <h3 style=color:#fff>How old do I need to be to take PTE-Academic?</h3>
-                        <div><p style=text-align:justify>You should at least be 16 years old to take the test.</div>
-                        <h3 style=color:#fff>Do I need to have computer skills to take the test?</h3>
-                        <div><p style=text-align:justify>You do not require any special computer skills. However, you
-                                are
-                                advised to take one of our practice tests or watch the video tutorial on our website to
-                                get
-                                acquainted with the format.</div>
-                        <h3 style=color:#fff>Is it compulsory to appear in the PTE-Academic examination in my home
-                            country
-                            only?</h3>
-                        <div><p style=text-align:justify>No, you can take the test at any of our test centres around the
-                                world. However, you are advised to check what type of ID you have to use. If you are
-                                away
-                                from your home country, you might be asked to show you passport at the test centre.
-                        </div>
-                        <h3 style=color:#fff>Can I book more than one PTE test?</h3>
-                        <div><p style=text-align:justify>You can only book one test at a time.</div>
-                        <h3 style=color:#fff>Can I change my exam centre later after buying the PTEpromocode?</h3>
-                        <div><p style=text-align:justify>Yes.</div>
-                        <h3 style=color:#fff>Are all subjects weighed equally in the exam?</h3>
-                        <div><p style=text-align:justify>Yes.</div>
-                        <h3 style=color:#fff>How many times can I take the test?</h3>
-                        <div><p style=text-align:justify>You can take the test as many times as you want.</div>
-                        <h3 style=color:#fff>Can anyone use the promo code which is bought on my name?</h3>
-                        <div><p style=text-align:justify>Yes</div>
-                    </div>
+    <!-- /banner-->
+
+
+    <div class="services-w3" id="services">
+        <div class="container"><h3>Services</h3><label class="line"></label>
+            <p class="top-p">We Provide Following Services With PTE Exam Voucher.</p>
+            <div class="col-md-4 services-grids-w3l"><img style="width:initial;height: 109px;" src={{url('css/front/images/ci1.jpg')}}><h4>Free 5 Mock
+                    Test</h4>
+                <p>Get 5 free complete Mock Test along with the Voucher</p></div>
+
+
+
+            <div class="col-md-4 services-grids-w3l"><img style="width:initial;height: 109px;" src={{url('css/front/images/ci2.jpg')}}><h4>Free Reference
+                    Material</h4>
+
+                <p>Important Reference Material for the Practice Purpose </p></div>
+            <div class="col-md-4 services-grids-w3l"><img style="width:initial;height: 109px;" src={{url('css/front/images/ci3.jpg')}}><h4>Save</h4>
+
+                <p>Save Rs.{{$saved_prize}} on Booking PTE Exam India Wide</p></div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="services-w3 even" id="services">
+        <div class="container"><h3>How To Book PTE Exam Date ?</h3><label class="line"></label>
+            <div class="col-md-3">
+                <div style="width:90%;float:left;" class="services-grids-w3l">
+                    <div style="min-height:121px;"><img style="height:90px;width:101px;" src={{url('css/front/images/service1.png')}}></div>
+
+
+                    <h4>Create Account</h4>
+                    <p>Visit <a target="_new" href="http://pearsonpte.com/book/" rel="nofollow">pearsonpte.com/book</a>
+                        and
+                        create account.</p></div>
+                <div style="width:10%;float:right;padding-top:20px;font-size:38px;"><span
+                            class="glyphicon glyphicon-chevron-right visible-md visible-lg"
+                            aria-hidden="true"></span><span
+                            class="glyphicon glyphicon-chevron-down visible-sm visible-xs" aria-hidden="true"></span>
                 </div>
             </div>
-        </div>
-        <br>
-        <div style=background:#374593;background-size:contain>
-            <div class=even style=background:rgba(0,0,0,.6)>
-                <div class=container>
-                    <div class=row>
-                        <div class="col-md-12 testimonials-w3-agileits">
-                            <div class=test-content-w3-agile><h3>Testimonials</h3>
-                                <div class="example1 wmuSlider" style=max-height:150px>
-                                    <div class=wmuSliderWrapper>
-                                        <article style=position:relative;width:100%;opacity:1>
-                                            <div class=banner-wrap><p><i aria-hidden=true class="fa fa-quote-left"></i>
-                                                    PTEPromoCode helped me to save Money and it also provided me with a
-                                                    mock
-                                                    test. The staff are good and are responding to the queries
-                                                    immediately.
-                                                    <i aria-hidden=true class="fa fa-quote-right"></i><h4>-Shital
-                                                    Sharma</h4></div>
-                                        </article>
-                                        <article style=position:relative;width:100%;opacity:1>
-                                            <div class=banner-wrap><p><i aria-hidden=true class="fa fa-quote-left"></i>
-                                                    Nice
-                                                    deal,got good PTE Exam discount on PTEPromoCode + also got tests for
-                                                    practice + awesome customer service. <i aria-hidden=true
-                                                                                            class="fa fa-quote-right"></i>
-                                                <h4>-Gaurang Kadia</h4></div>
-                                        </article>
-                                        <article style=position:relative;width:100%;opacity:1>
-                                            <div class=banner-wrap><p><i aria-hidden=true class="fa fa-quote-left"></i>
-                                                    Thank you PTEPromoCode team saving and serving best way. I like the
-                                                    way
-                                                    you serve and treat your clients. Good job and keep rocking <i
-                                                            aria-hidden=true class="fa fa-quote-right"></i><h4>-Srishti
-                                                    Vasekar</h4></div>
-                                        </article>
-                                        <article style=position:relative;width:100%;opacity:1>
-                                            <div class=banner-wrap><p><i aria-hidden=true class="fa fa-quote-left"></i>
-                                                    Highly recommended and the mock tests are quite helpful in preparing
-                                                    for
-                                                    PTE exams, Very Helpful people out there Thanks PTEPromoCode <i
-                                                            aria-hidden=true class="fa fa-quote-right"></i><h4>-Ronak
-                                                    Patel</h4></div>
-                                        </article>
-                                    </div>
-                                    <ul class=wmuSliderPagination>
-                                        <li><a href=# class=wmuActive>0</a>
-                                        <li><a href=#>1</a>
-                                        <li><a href=#>2</a>
-                                    </ul>
-                                </div>
-                                <script src="{{ asset('css/front/js/jquery.wmuSlider.js') }}"></script>
-                                <script>$(".example1").wmuSlider()</script>
-                            </div>
-                        </div>
-                    </div>
+            <div class="col-md-3">
+                <div style="width:90%;float:left;" class="services-grids-w3l">
+                    <div style="min-height:121px;"><img style="height:110px;width:95px;" src={{url('css/front/images/service2.png')}}></div>
+
+                    <h4>Date &amp; Location</h4>
+                    <p>Book your preffered Exam date and Location.</p></div>
+                <div style="width:10%;float:right;padding-top:20px;font-size:38px;"><span
+                            class="glyphicon glyphicon-chevron-right visible-md visible-lg"
+                            aria-hidden="true"></span><span
+                            class="glyphicon glyphicon-chevron-down visible-sm visible-xs" aria-hidden="true"></span>
                 </div>
+            </div>
+            <div class="col-md-3">
+                <div style="width:90%;float:left;" class="services-grids-w3l">
+                    <div style="min-height:121px;"><img style="height:91px;width:110px;" src={{url('css/front/images/service3.png')}}></div>
+
+                    <h4>Enter Voucher Code</h4>
+                    <p>You need to enter valid PTE exam voucher code in payment section.</p></div>
+                <div style="width:10%;float:right;padding-top:20px;font-size:38px;"><span
+                            class="glyphicon glyphicon-chevron-right visible-md visible-lg"
+                            aria-hidden="true"></span><span
+                            class="glyphicon glyphicon-chevron-down visible-sm visible-xs" aria-hidden="true"></span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div style="width:90%;float:left;" class="services-grids-w3l">
+
+
+                    <div style="min-height:121px;"><img style="height:97px;width:121px;" src={{url('css/front/images/service4.png')}}></div>
+                    <h4>Confirmation Email</h4>
+                    <p>Receive a confirmation email from PTE about your test booking.</p></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="services-w3" id="services">
+        <div class="container"><h3>Why Us ?</h3><label class="line"></label>
+            <div class="col-md-3 services-grids-w3l">
+
+                <div style="height:115px;"><img style="height:105px;width:81px;" src={{url('css/front/images/why1.png')}}></div>
+                <h4>24X7 Customer Care</h4>
+                <p>We are available to assist you on call &amp; Whats App 24X7 on +91 9725053310</p></div>
+            <div class="col-md-3 services-grids-w3l">
+
+
+                <div style="height:115px;"><img style="height:79px;width:126px;" src={{url('css/front/images/why2.png')}}></div>
+                <h4>Secure Payment</h4>
+                <p>To make your payment more secure we have made this website SSL SECURED.</p></div>
+            <div class="col-md-3 services-grids-w3l">
+
+
+                <div style="height:115px;"><img style="height:109px;width:117px;" src={{url('css/front/images/why3.png')}}></div>
+                <h4>Lowest Price
+                    <p>PTE Academic Cost Rs. 12,101 in India. Purchase Voucher Code from us &amp; Save
+                        Rs. .</p></h4>
+            </div>
+            <div class="col-md-3 services-grids-w3l">
+
+                <div style="height:115px;"><img style="height:109px;width:129px;" src={{url('css/front/images/why4.png')}}></div>
+
+                <h4>25000+ No. of Students</h4>
+                <p>Thousands of Student trust on us. We also help to book your exam.</p></div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="about-agileits" id="about" style="padding-bottom:0;">
+        <div class="container"><!--h3>About us</h3><label class="line"></label><p class="top-p"></p--></div>
+        <div class="col-md-6 about-left"></div>
+        <div class="col-md-6 about-right"><h4>Buy PTE Academic Voucher Code ₹ {{$rate or ''}} Get
+                ₹ {{$saved_prize or ''}} Discount</h4>
+
+            <p>
+                For Your Successful Academic and Career Endeavors, We Partner You at The Least Costs!<br>
+                We provide you a reliable and pocket-friendly option to take one of the best English proficiency Pearson
+                Test i.e. PTE Exam. We Provide Complete Assistance, Guidance, And Numerous Handbooks and Supporting
+                Material
+                to Help You Clear the Exam in The First Attempt Itself. <br><br>We Are Known for Giving Our Best and
+                Unmatched Services to Students Who Dream High. With Us, You Will Get the Best Value for Your Money and
+                That
+                Too at Reasonable Price as We Are Authorized Sellers of PTE Exam Vouchers. <br><br>On Booking Your PTE
+                Exam
+                Through Us, You Will Be Getting the Highest Discount on Your Application Fee in India. For Further
+                Countenance, We Are Providing 5 Mock Test Papers And Experts Counseling for Beginners. If You Are
+                Looking
+                for An Opportunity to Study in Foreign, Then Look Further Because PteVoucherCode Is the Best Destination
+                to
+                Make Your Offshore Study Dreams Come True.</p>
+
+
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clients" style="padding :0;">
+        <div style="background-color:rgba(0,0,0,0.4);padding:50px 0 50px 0;">
+            <div class="container"><h3>Testimonials</h3><label class="line"></label><h4>What Our Clients Say</h4>
+                <section class="slider">
+                    <div class="flexslider">
+                        <ul class="slides">
+                            <li><img src={{url('css/front/images/c1.png')}}>
+                                <p>Excellent service from Compass Overseas and I have taken PTE test voucher and
+                                    immediately
+                                    they have mailed me free PTE preparation material.</p>
+                                <div class="client"><h5>Jyotika</h5></div>
+                            </li>
+                            <li><img src={{url('css/front/images/c2.png')}}>
+                                <p>Thanks Compass Overseas for the great help.The executive staff is really good and
+                                    proactive at helping the students to purchase the PTE exam vouchers".</p>
+                                <div class="client"><h5>PAANI VERMA</h5></div>
+                            </li>
+                            <li><img src={{url('css/front/images/c3.png')}}>
+                                <p>Many many thanks to Compass Overseas to help me a lot by providing a large no. of
+                                    tests
+                                    that were very beneficial for me.</p>
+                                <div class="client"><h5>RAVI CHAND GADE</h5></div>
+                            </li>
+                            <li><img src={{url('css/front/images/c4.png')}}>
+                                <p>Nice deal,got good discount on PTE exam voucher + also got 5 test for practice +
+                                    awesome
+                                    customer service.</p>
+                                <div class="client"><h5>SYED IMAD</h5></div>
+                            </li>
+                            <li><img src={{url('css/front/images/c5.png')}}>
+                                <p>Thanks to CompassOverseas for giving me such a wonderful opportunity to purchase at
+                                    very
+                                    lower rates , and indeed the test papers are really good and helpful.</p>
+                                <div class="client"><h5>THATTALA RAJYALAKSHMI</h5></div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
             </div>
         </div>
     </div>
 
+    <div class="services-w3" id="services" style="padding-bottom: 10px;">
+
+        <div class="container"><h3>PTE FAQs</h3>
+            <label class="line"></label>
+        </div>
+
+    </div>
+
+    <div class=container>
+        {{--<div class=row>
+            <div class=col-md-6>
+                <div id=accordion2>
+                    <h3 style=color:#fff style=color:#fff>How and where to buy the PTE Exam Voucher?</h3>
+                    <div>
+                        <p style=text-align:justify>Go to the website: <a href="https://www.ptevouchercode.com/">https://www.ptevouchercode.com/</a>
+                            in order to avail the voucher code on discounted rates. All you need to fill your required
+                            details along with payment on this website to grab the PTE academic voucher.</p>
+                    </div>
+
+                    <h3 style=color:#fff style=color:#fff>Why should I buy Voucher from PTEVoucherCode?</h3>
+                    <div>
+                        <p style=text-align:justify><a href="https://www.ptevouchercode.com/">PTEVoucherCode</a> offers
+                            highest discounts and easy way to schedule PTE Academic Exam. To avoid hassles, you should
+                            buy
+                            from the best PTE Exam Voucher website i.e. PTEVoucherCode.</p>
+                    </div>
+
+                    <h3 style=color:#fff style=color:#fff>What will be the validity of voucher to redeem on PTE
+                        website?</h3>
+                    <div>
+                        <p style=text-align:justify>You can redeem it anytime till 11 months from the date of purchase
+                            at
+                            any center across India.</p>
+                    </div>
+
+                    <h3 style=color:#fff style=color:#fff>Do PTE academic work for PR (Migration) and Student Visa? Is
+                        PTE
+                        Exam universally accepted or not?</h3>
+                    <div>
+                        <p style=text-align:justify>
+                        <ul>
+                            <li>For education purpose, all countries accept PTE.</li>
+                            <li>For Migration and PR, only Australia and NZ accept the PTE Academic.</li>
+                            <li>For more details, you can check on this link: <a
+                                        href="http://pearsonpte.com/test-takers/accepts/" rel="nofollow">http://pearsonpte.com/test-takers/accepts/</a>
+                            </li>
+                        </ul>
+                        </p>
+                    </div>
+
+                    <h3 style=color:#fff style=color:#fff>How to apply the purchased voucher on to the Pearson
+                        website?</h3>
+                    <div>
+                        <p style=text-align:justify>Very first, you need to go on <a href="http://www.pearsonpte.com"
+                                                                                     rel="nofollow">www.pearsonpte.com</a>.
+                            Then, you need to click on the “BOOK NOW” and you will find the “SIGN IN” button so just
+                            click
+                            on that.</p>
+                    </div>
+
+                    <h3 style=color:#fff style=color:#fff>Is PTE test genuine?</h3>
+                    <div>
+                        <p style=text-align:justify>Yes, it is. Various individuals are taking benefit through this
+                            English
+                            language test and making their dream come true to study and work abroad.</p>
+                    </div>
+
+                    <h3 style=color:#fff style=color:#fff>What is the actual fee for PTE in India?</h3>
+                    <div>
+                        <p style=text-align:justify>The actual cost what you have to pay is Rs. 12,101 but you can avail
+                            the
+                            discounts through the PTE test voucher code in order to save on your test fee.</p>
+                    </div>
+
+                    <h3 style=color:#fff style=color:#fff> Is this voucher valid across India?</h3>
+                    <div>
+                        <p style=text-align:justify>Yes, it is valid for all the centers in all over the India.</p>
+                    </div>
+
+                    <h3 style=color:#fff style=color:#fff>What is the refund policy in case of cancellation?</h3>
+                    <div>
+                        <p style=text-align:justify>PTE refunds 50% of the amount if you cancel before 7 days of your
+                            test
+                            date. Check more details <a href={{url('refund-policy')}}>here</a>.</p>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class=col-md-6>
+                <div id=accordion>
+                    <h3 style=color:#fff style=color:#fff>Is there any difference between PTE general and PTE exam?</h3>
+                    <div>
+                        <p style=text-align:justify>Well, only PTE Academic is valid for all the Visa applications and
+                            PTE
+                            General doesn’t work for visa applications.</p>
+                    </div>
+
+                    <h3 style=color:#fff style=color:#fff> Can anyone use this voucher which is bought on my name?</h3>
+                    <div>
+                        <p style=text-align:justify>Yes, anyone can use it. It is kind of general voucher that anyone
+                            can
+                            buy and anyone can use.</p>
+                    </div>
+
+                    <h3 style=color:#fff style=color:#fff>What if I gift this voucher to my friend or relative?</h3>
+                    <div>
+                        <p style=text-align:justify>Yes, you can gift your voucher to anyone to be redeemed.</p>
+                    </div>
+
+                    <h3 style=color:#fff style=color:#fff>What is the process and charge if I reschedule my PTE
+                        exam?</h3>
+                    <div>
+                        <p style=text-align:justify>You can directly visit the PTE website to reschedule your exam but
+                            before seven days of your previously scheduled exam date. You will be charged 25% of the
+                            actual
+                            cost of PTE directly on the PTE website as there is no voucher provided for rescheduling
+                            your
+                            exam.</p>
+                    </div>
+
+                    <h3 style=color:#fff style=color:#fff> Can I change my exam center later after buying the voucher
+                        code?</h3>
+                    <div>
+                        <p style=text-align:justify>Yes, you can easily change your exam center later as per your
+                            availability.</p>
+                    </div>
+
+                    <h3 style=color:#fff style=color:#fff>After my PTE exam, when and where can I get my result?</h3>
+                    <div>
+                        <p style=text-align:justify>Your result will be declared within 5 official days. In case, if you
+                            don’t get your result in 5 days, you can call on the toll-free number. 0008004402020.</p>
+                    </div>
+
+                    <h3 style=color:#fff style=color:#fff>What if I’m traveling to another country and want to exchange
+                        the
+                        voucher with that country and agreed to pay a difference amount?</h3>
+                    <div>
+                        <p style=text-align:justify>Well, vouchers are country specific so, you can only use the voucher
+                            in
+                            the same country where you bought from.</p>
+                    </div>
+
+                    <h3 style=color:#fff style=color:#fff>What if I bought a voucher and it will not work?</h3>
+                    <div>
+                        <p style=text-align:justify>Well, it never happened previously and if it happens then, certainly
+                            there will be a technical issue and will be resolved with the team of PTE.</p>
+                    </div>
+
+                    <h3 style=color:#fff style=color:#fff>Where to call for any assistance?</h3>
+                    <div>
+                        <p style=text-align:justify>You can call the customer care no. 0008004402020 during official
+                            days
+                            from Monday to Friday between 9 a.m. to 5 p.m. in India.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>--}}
+    </div>
 
 @endsection
+

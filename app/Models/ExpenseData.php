@@ -11,10 +11,10 @@ use Auth;
 class ExpenseData extends Authenticatable
 {
     use Notifiable;
-   
+
     protected $table = 'tbl_expense_data';
     protected $primaryKey = 'id';
-    
+
 
     /**
      * The attributes that are mass assignable.
@@ -22,10 +22,10 @@ class ExpenseData extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'date', 'name','detail','before_gst','gst','after_gst','gstn','invoice_number','invoice_date'
+        'date', 'name','detail','before_gst','gst','after_gst','gstn','invoice_number','invoice_date','sgst','cgst'
     ];
 
-    
+
 
     /**
      * Get all User getCollection
@@ -35,7 +35,7 @@ class ExpenseData extends Authenticatable
     public function getCollection()
     {
 
-         $expensedata = ExpenseData::select('tbl_expense_data.*');
+        $expensedata = ExpenseData::select('tbl_expense_data.*');
         return $expensedata->get();
     }
 
@@ -46,7 +46,7 @@ class ExpenseData extends Authenticatable
      */
     public function getDatatableCollection()
     {
-       return ExpenseData::select('tbl_expense_data.*');
+        return ExpenseData::select('tbl_expense_data.*');
     }
 
     /**
@@ -190,6 +190,8 @@ class ExpenseData extends Authenticatable
         $expensedata->name = $models['name'];
         $expensedata->detail = $models['detail'];
         $expensedata->gstn = $models['gstn'];
+        $expensedata->sgst = $models['sgst'];
+        $expensedata->cgst = $models['cgst'];
         $expensedata->hsn_sac = $models['hsn_sac'];
         $expensedata->before_gst = $models['before_gst'];
         $expensedata->gst = $models['gst'];

@@ -118,6 +118,8 @@ class ExpenseDataController extends Controller
             $row[] = $expensedataData->hsn_sac ;
             $row[] = $expensedataData->before_gst;
             $row[] = $expensedataData->gst;
+            $row[] = $expensedataData->sgst;
+            $row[] = $expensedataData->cgst;
             $row[] = $expensedataData->after_gst;
             $row[] = view('datatable.action', ['module' => "expense",'type' => $expensedataData->id, 'id' => $expensedataData->id])->render();
             $appData[] = $row;
@@ -152,7 +154,9 @@ class ExpenseDataController extends Controller
             $row['GSTN'] = $requestData->gstn;
             $row['HSN/SAC'] = $requestData->hsn_sac ;
             $row['Before GST'] = $requestData->before_gst;
-            $row['GST Rs'] = $requestData->gst;
+            $row['IGST'] = $requestData->gst;
+            $row['SGST'] = $requestData->sgst;
+            $row['CGST'] = $requestData->cgst;
             $row['After GST'] = $requestData->after_gst;
             $appData[] = $row;
         }
@@ -227,6 +231,8 @@ class ExpenseDataController extends Controller
             'detail' => 'required',
             'before_gst' => 'required',
             'gst' => 'required',
+            'sgst' => 'required',
+            'cgst' => 'required',
             'after_gst' => 'required',
         );
 

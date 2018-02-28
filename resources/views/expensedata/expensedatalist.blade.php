@@ -75,7 +75,9 @@
                                             <th class="no-sort">GSTN</th>
                                             <th class="no-sort">HSN/SAC</th>
                                             <th class="no-sort">Before GST</th>
-                                            <th class="no-sort">GST Rs</th>
+                                            <th class="no-sort">IGST</th>
+                                            <th class="no-sort">SGST</th>
+                                            <th class="no-sort">CGST</th>
                                             <th class="no-sort">After GST</th>
                                             <th class="no-sort">Action</th>
                                         </tr>
@@ -83,6 +85,8 @@
                                         </thead>
                                         <thead>
                                         <tr>
+                                            <th></th>
+                                            <th></th>
                                             <th></th>
                                             <th></th>
                                             <th></th>

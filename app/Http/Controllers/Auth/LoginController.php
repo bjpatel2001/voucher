@@ -91,7 +91,7 @@ class LoginController extends Controller
             $data_saved_prize = $detail_model->getData();
             if(!empty($data_saved_prize)) {
                 $data['title'] = $data_saved_prize->page_title;
-                $data['saved_prize'] = $data_saved_prize->saved_prize;
+                $data['saved_prize'] = floor($data_saved_prize->saved_prize);
             }
             $user_detail = new Agent();
             $user_data = $user_detail->getAgentByField($user_id['user_id'],'id');
@@ -126,23 +126,9 @@ class LoginController extends Controller
     {
         return view('test');
     }
-    /**
-     * How to book view page
-     *
-     */
-    public function howToBook()
-    {
-        return view('front.how_to_book');
-    }
 
-    /**
-     * pteFaq view page
-     *
-     */
-    public function pteFaq()
-    {
-        return view('front.pte_faq');
-    }
+
+
 
     /**
      * refundPolicy view page
@@ -161,6 +147,24 @@ class LoginController extends Controller
     {
         return view('front.contact_us');
     }
+
+    /**
+     * contactUs view page
+     *
+     */
+    public function infographics()
+    {
+        return view('front.infographics');
+    }
+    /**
+     * contactUs view page
+     *
+     */
+    public function aboutUs()
+    {
+        return view('front.about_us');
+    }
+
 
     /**
      * contactUs view page

@@ -1,45 +1,35 @@
-<div class=header-top-w3layouts>
-    <div class=container>
-        <div class=indicat-w3></div>
-        <div class=detail-w3l>
-            <ul>
-                <li><i aria-hidden=true class="glyphicon glyphicon-earphone"></i>+91-9687-646863
-                <li><i aria-hidden=true class="glyphicon glyphicon-earphone"></i>+91-9687-646861
-                <li><i aria-hidden=true class="glyphicon glyphicon-envelope"></i>info@ptepromocode.com
-            </ul>
-        </div>
-        <div class=clearfix></div>
-    </div>
+<div style="background-color:#0080aa;color:#fff;">
+    <div class="container" style="padding:5px 0 5px 200px;"><p class="hidden-xs" style="float:left;text-align:right;"><i
+                    class="fa fa-certificate" aria-hidden="true"></i> Authorised Re-seller of PTE Voucher</p>
+        <p class="visible-xs" style="float:right;width:270px;text-align:right;"><i class="fa fa-certificate"
+                                                                                   aria-hidden="true"></i> Authorised
+            Re-seller of PTE-A Voucher</p>
+        <p style="float:right;width: 225px;text-align:right;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span
+                    class="glyphicon glyphicon-envelope"></span> help@ptevouchercode.com</p>
+        <p style="float:right;margin-left:20px;"><span class="glyphicon glyphicon-phone-alt"></span> +91-79-8448-5740
+        </p>
+        <p style="float:right;"><span class="glyphicon glyphicon-earphone"></span> +91-97250-53310</p></div>
 </div>
-<div class=ban-top style=background-color:#0080aa>
-    <div class=container>
-        <div>
-            <div class=top_nav_right><a href=https://www.ptepromocode.com><img src={{url('css/front/images/logo.png')}}></a></div>
-            <div class=top_nav_left style=margin-top:7px>
-                <nav class="navbar navbar-default">
-                    <div class=container-fluid>
-                        <div class=navbar-header>
-                            <button aria-expanded=false class="collapsed navbar-toggle"
-                                    data-target=#bs-example-navbar-collapse-1 data-toggle=collapse type=button><span
-                                        class=sr-only>Toggle navigation</span> <span class=icon-bar></span> <span
-                                        class=icon-bar></span> <span class=icon-bar></span></button>
-                        </div>
-                        <div class="collapse menu--shylock navbar-collapse" id=bs-example-navbar-collapse-1>
-                            <ul class="menu__list nav navbar-nav">
-                                <li class=menu__item><a href=https://www.ptepromocode.com/buy class=menu__link>Buy PTE
-                                        Promo Code</a>
-                                <li class="menu__item hidden-xs"><a href={{url('how-to-book')}} class=menu__link>How to Book
-                                        Exam</a>
-                                <li class=menu__item><a href={{url('pte-faq')}} class=menu__link>PTE FAQs</a>
-                                <li class=menu__item><a href={{url('refund-policy')}} class=menu__link>Refund Policy</a>
-                                <li class=menu__item><a href=https://www.ptepromocode.com/blog class=menu__link>Blog</a>
-                                <li class=menu__item><a href={{url('contact-us')}} class=menu__link>Contact Us</a>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
+<div class="nav-links">
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"><span
+                            class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://www.ptevouchercode.com/"><img
+                            src={{url('css/front/images/logo.png')}}></a></div>
+            {{--<a class="navbar-brand" href="https://www.ptevouchercode.com/"><img src={{url('css/front/images/logo.png')}}></a></div>--}}
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav link-effect">
+                    <li><a href="https://www.ptevouchercode.com">Buy PTE Voucher</a></li>
+                    <li><a href={{url('infographics')}}>PTE Infographic</a></li>
+                    <li><a href={{url('refund-policy')}}>Refund Policy</a></li>
+                    <li><a href="https://www.ptepromocode.com/blog">Blog</a></li>
+                    <li><a href={{url('about-us')}}>About us</a></li>
+                    <li><a href={{url('contact-us')}}>Contact</a></li>
+                </ul>
             </div>
-            <div class=clearfix></div>
         </div>
-    </div>
+    </nav>
 </div>

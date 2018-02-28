@@ -15,12 +15,11 @@ Auth::routes();
 
 
 Route::get('/', 'Auth\LoginController@welcome');
-Route::get('/how-to-book', 'Auth\LoginController@howToBook');
-Route::get('/pte-faq', 'Auth\LoginController@pteFaq');
+Route::get('/infographics', 'Auth\LoginController@infographics');
 Route::get('/refund-policy', 'Auth\LoginController@refundPolicy');
 Route::get('/contact-us', 'Auth\LoginController@contactUs');
 Route::get('/thankyou', 'Auth\LoginController@thankYou');
-Route::post('/send-query', 'Auth\LoginController@sendQuery');
+Route::get('/about-us', 'Auth\LoginController@aboutUs');
 
 Route::get('/backend', function () {
     return Redirect::to('login');
